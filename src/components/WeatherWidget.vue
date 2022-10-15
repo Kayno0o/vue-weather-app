@@ -58,7 +58,7 @@ export default {
   methods: {
     fetchWeather() {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${this.city.name}&appid=b2c4314e1fce5f084b6f7fb322524cd0&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${this.city.name}&appid=${process.env.VUE_APP_OPENWEATHERAPI_TOKEN}&units=metric`
       )
         .then((response) => response.json())
         .then((data) => {
