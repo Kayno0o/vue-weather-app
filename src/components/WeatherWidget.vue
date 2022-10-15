@@ -41,15 +41,7 @@ export default {
   },
   data() {
     return {
-      weather: {},
-    };
-  },
-  created() {
-    this.fetchWeather();
-  },
-  methods: {
-    fetchWeather() {
-      this.weather = {
+      weather: {
         name: "",
         country: "",
         temp: 0,
@@ -57,8 +49,14 @@ export default {
         feelsLike: 0,
         humidity: 0,
         wind: 0,
-      };
-
+      },
+    };
+  },
+  created() {
+    this.fetchWeather();
+  },
+  methods: {
+    fetchWeather() {
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${this.city.name}&appid=b2c4314e1fce5f084b6f7fb322524cd0&units=metric`
       )
